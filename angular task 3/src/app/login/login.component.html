@@ -1,0 +1,34 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="registerForms" [ngSubmit]="onSubmit()">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" formControlName="first" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control">
+                </div>
+                <br>
+                 <div class="form-group">
+                    <button class="btn btn-success">
+                        register
+                    </button>
+                 </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
