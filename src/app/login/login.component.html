@@ -1,0 +1,41 @@
+<!-- <p>login works!</p> -->
+
+
+ <ul>
+      <li *ngFor="let course of courses ; let i = index">
+        {{i}}-{{course.name}}
+      </li>
+    </ul>
+
+    <div class="container-fluid">
+      <div class="card shadow" *ngIf="!loginSuccess && !loginFailed">
+        <div class="card-header text-center">
+          <h3>Login</h3>
+        </div>
+        <form class="ml-3 mr-3 mb-3">
+          <div>
+            <label for="username">user name</label>
+            <input type="text" class="form-control" name="UserName" [(ngModel)]="userName" >
+          </div>
+          <div class="form-group">
+              <label for="password">password</label>
+              <input type="text" class="form-control" name="password" [(ngModel)]="password">
+          </div>
+          <button type="submit" class="btn btn-outline-success" (click)="login()">Login</button>
+        </form>
+      </div>
+    <div *ngIf="loginFailed" class="text-center">
+      <img src="invalid.png" alt="login failed">
+      <h4 style="font-family: cursive;">Invalid</h4>
+    </div>  
+    <div *ngIf="loginSuccess" class="text-center">
+      <img src="valid.png" alt="login SuccessFull">
+      <h4 style="font-family: cursive;">Well-Come {{userName}}</h4>
+    </div>
+    <div *ngIf="loginSuccess || loginFailed" class="text-center">
+     <button class="btn btn-outline-success" (click)="loginSuccess =loginFailed= false">
+        Go Back !
+     </button>
+    </div>
+  </div>
+  
